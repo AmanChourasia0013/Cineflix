@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import MovieRow from "./components/MovieRow";
+import MovieRow from "./components/Movierow";
 import MovieCard from "./components/Moviecard";
 import Footer from "./components/Footer";
 import "./App.css";
