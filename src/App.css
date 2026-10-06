@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+}
+
+.navbar {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 55px;
+  background-color: #080808;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar h2 {
+  color: #e50914;
+  margin: 0;
+  font-size: 25px;
+}
+
+.navlinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navlinks span {
+  color: #ddd;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navlinks span:hover {
+  color: white;
+}
+
+.hero {
+  height: 520px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.75) 35%,
+      rgba(0, 0, 0, 0.15) 75%
+    ),
+    linear-gradient(to top, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 25%),
+    url("/stranger.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.herotext {
+  margin-left: 70px;
+  margin-bottom: 80px;
+  max-width: 500px;
+}
+
+.herotext h1 {
+  font-size: 52px;
+  margin-bottom: 25px;
+}
+
+.herotext button {
+  padding: 12px 28px;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.herotext button:hover {
+  background-color: #ddd;
+}
+
+.movierow {
+  padding: 35px 55px 10px;
+}
+
+.movierow h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.movies {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.movies::-webkit-scrollbar {
+  display: none;
+}
+
+.moviecard {
+  width: 220px;
+  min-width: 220px;
+  background-color: #181818;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.moviecard:hover {
+  transform: scale(1.05);
+}
+
+.moviecard img {
+  width: 220px;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+}
+
+.moviecard h3 {
+  font-size: 16px;
+  margin: 14px 12px 5px;
+}
+
+.moviecard p {
+  color: #999;
+  font-size: 13px;
+  margin: 0 12px 12px;
+}
+
+.moviecard button {
+  margin: 0 12px 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e50914;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.moviecard button:hover {
+  background-color: #b20710;
+}
+
+.footer {
+  margin-top: 70px;
+  padding: 50px;
+  background-color: #080808;
+  color: #888;
+  text-align: center;
+}
+
+.footer h3 {
+  color: #e50914;
+  font-size: 22px;
+}
+
+.footer p {
+  font-size: 13px;
+}
