@@ -10,6 +10,7 @@ import {useEffect} from "react";
 
 function App() {
   const [movie, setMovie] = useState(null);
+  const [avengers, setAvengers] = useState(null);
 
   
 
@@ -33,7 +34,25 @@ function App() {
 }, []);
     
 
-  const popularSeries = [
+ 
+useEffect(() => {
+  axios.get(`${import.meta.env.VITE_OMDB_API_KEY}`)
+    .then(function (response) {
+      console.log(response.data);
+
+      setAvengers(
+        response.data.Search.map(function (item) {
+          return {
+            name: item.Title,
+            image: item.Poster,
+            genre: item.Year
+          };
+        })
+      );
+    });
+}, []);
+
+   const popularSeries = [
     {
       name: "Breaking Bad",
       image: "Breaking Bad.jpeg",
@@ -56,29 +75,6 @@ function App() {
     },
   ];
 
-  const trending = [
-    {
-      name: "Wednesday",
-      image: "wednesday.jpg",
-      genre: "Mystery",
-    },
-    {
-      name: "Black Summer",
-      image: "Black Summer.png",
-      genre: "Horror Post-Apocalyptic drama",
-    },
-    {
-      name: "Squid Game",
-      image: "squid game.png",
-      genre: "Dystopian Survival thriller",
-    },
-    {
-      name: "Dark",
-      image: "dark1.jpg",
-      genre: "Sci-Fi thriller",
-    },
-  ];
-
   return (
     <>
 
@@ -88,9 +84,10 @@ function App() {
        
 
       {movie && <MovieRow title="Popular Movies" movies={movie} />}
+       {avengers && <MovieRow title="Avengers Movies" movies={avengers} />}
 
       <MovieRow title="Popular Series" movies={popularSeries} />
-      <MovieRow title="Trending Now" movies={trending} />
+     
 
       <Footer />
     </>

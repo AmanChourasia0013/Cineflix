@@ -10,7 +10,7 @@ function MovieCard({ name, image }) {
   return (
     <div className="moviecard">
       <img src={image} onError={(e) => {
-     e.target.src = "/poster.jpg";
+       e.target.src = "/poster.jpg";
       }} />
 
       <h3>{name}</h3>
